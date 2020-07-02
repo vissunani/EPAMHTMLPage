@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+  .fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 350px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+  .fa-facebook 
+  {
+  background: #3B5998;
+  color: white;
+  }
+</style>
+
+</head>
+<body class="bg-info"> 
+
+<script>
+function myFunction() {
+  var x,n,pass,conpass;
+  x = document.getElementById("phone").value;
+  if (isNaN(x) || x < 5555555555 || x > 9999999999) {
+    document.getElementById("phone").style.borderColor = "red";
+    document.getElementById("phoneerror").innerHTML="Phonenumber should be > 5555555555 and <9999999999";
+  } else {
+    document.getElementById("phone").style.borderColor = "green";
+  }
+  n=document.getElementById("email").value;
+  if (n.includes("@") && n.includes(".com"))
+  {
+  document.getElementById("email").style.borderColor = "green";
+  }
+  else
+  {
+  document.getElementById("email").style.borderColor = "red";
+  document.getElementById("emailerror").innerHTML="Enter a valid Email";
+  }
+  pass=document.getElementById("pass").value;
+  if (pass.length>=8)
+  {
+   document.getElementById("pass").style.borderColor = "green";
+  }
+  else
+  {
+   document.getElementById("pass").style.borderColor = "red";
+   document.getElementById("passerror").innerHTML="Password should have length greater than 8";
+  }
+  conpass= document.getElementById("confirmpass").value;
+  if (conpass==pass && conpass!="")
+  {
+   document.getElementById("confirmpass").style.borderColor = "green";
+   }
+   else
+   {
+   	document.getElementById("confirmpass").style.borderColor = "red";
+    document.getElementById("confirmerror").innerHTML="Password should match";
+   }
+  
+}
+</script>
+ 
+<div class="container">
+  <div class="card" style="width:400px;margin-left:30%">
+  	<h2 style="margin-left:30%">Register</h2>
+    <div class="card-body">
+    	<p>Email</p>
+        <input type="text" id="email" style="width:350px;margin-bottom:10px">
+        <p id="emailerror" style="color:red;"></p>
+        <p>Password</p>
+        <input type="password" id="pass" style="width:350px;margin-bottom:10px">
+        <p id="passerror" style="color:red;"></p>
+        <p>Confirm Password</p>
+        <input type="password" id="confirmpass" style="width:350px;margin-bottom:10px">
+        <p id="confirmerror" style="color:red;"></p>
+        <p>Phone number</p>
+        <input type="text" id="phone" style="width:350px;margin-bottom:10px">
+        <p id="phoneerror" style="color:red;"></p>
+        <button type="button" class="btn btn-success" onclick="myFunction()" style="margin-top:20px;width:350px">Submit</button>
+        <p style="text-align:center;margin-top:10%"> ---------- OR ---------------</p>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<a href="#" class="fa fa-facebook"></a>
+		<a href="#" class="fa fa-google"></a>
+    
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
